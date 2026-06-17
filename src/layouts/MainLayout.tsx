@@ -12,7 +12,7 @@ export function MainLayout() {
   }, [darkMode])
 
   return (
-    <div className="min-h-svh bg-white text-slate-900 dark:bg-[#111315] dark:text-slate-100">
+    <div className="min-h-svh bg-[#f8fafd] text-[#202124] dark:bg-[#0f1113] dark:text-[#e3e3e3]">
       <Outlet context={{ openDrawer: () => setDrawerOpen(true) }} />
       <NavigationDrawer
         open={drawerOpen}

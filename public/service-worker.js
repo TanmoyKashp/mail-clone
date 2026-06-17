@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mailx-shell-v1'
+const CACHE_NAME = 'mailx-shell-v2'
 const APP_SHELL = ['/', '/inbox', '/manifest.json', '/favicon.svg', '/pwa-192.svg', '/pwa-512.svg']
 
 self.addEventListener('install', (event) => {

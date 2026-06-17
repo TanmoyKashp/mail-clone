@@ -19,8 +19,8 @@ export function EmailDetailPage() {
 
   if (!email) {
     return (
-      <main className="mx-auto min-h-svh max-w-2xl bg-white dark:bg-[#111315]">
-        <div className="flex h-16 items-center px-2">
+      <main className="mx-auto min-h-svh max-w-2xl bg-white dark:bg-[#0f1113]">
+        <div className="flex h-16 items-center px-2 pt-[env(safe-area-inset-top)]">
           <IconButton label="Back" onClick={() => navigate(-1)}>
             <ArrowLeft size={22} />
           </IconButton>
@@ -30,8 +30,8 @@ export function EmailDetailPage() {
   }
 
   return (
-    <main className="mx-auto min-h-svh max-w-2xl bg-white pb-8 dark:bg-[#111315]">
-      <header className="sticky top-0 z-20 flex h-16 items-center gap-1 bg-white/95 px-2 backdrop-blur dark:bg-[#111315]/95">
+    <main className="gmail-scroll mx-auto min-h-svh max-w-2xl bg-white pb-8 dark:bg-[#0f1113]">
+      <header className="sticky top-0 z-20 flex h-16 items-center gap-1 bg-white/95 px-2 pt-[env(safe-area-inset-top)] backdrop-blur dark:bg-[#0f1113]/95">
         <IconButton label="Back" onClick={() => navigate(-1)}>
           <ArrowLeft size={22} />
         </IconButton>
@@ -47,30 +47,30 @@ export function EmailDetailPage() {
         </IconButton>
       </header>
       <article className="px-5">
-        <h1 className="pt-3 text-[27px] font-normal leading-tight tracking-normal text-slate-900 dark:text-slate-50">{email.subject}</h1>
+        <h1 className="pt-3 text-[26px] font-normal leading-[1.18] tracking-normal text-[#202124] dark:text-[#e3e3e3]">{email.subject}</h1>
         <div className="mt-6 flex items-start gap-3">
-          <Avatar name={email.sender} />
+          <Avatar name={email.sender} className="size-10" />
           <div className="min-w-0 flex-1">
             <div className="flex items-start justify-between gap-3">
               <div>
-                <p className="text-[15px] font-semibold text-slate-900 dark:text-slate-50">{email.sender}</p>
-                <p className="truncate text-xs text-slate-500 dark:text-slate-400">to me • {email.senderEmail}</p>
+                <p className="text-[15px] font-semibold leading-5 text-[#202124] dark:text-[#e3e3e3]">{email.sender}</p>
+                <p className="truncate text-xs leading-5 text-[#5f6368] dark:text-[#c4c7c5]">to me • {email.senderEmail}</p>
               </div>
-              <time className="shrink-0 text-xs text-slate-500 dark:text-slate-400">{email.timestamp}</time>
+              <time className="shrink-0 text-xs leading-5 text-[#5f6368] dark:text-[#c4c7c5]">{email.timestamp}</time>
             </div>
           </div>
         </div>
-        <div className="mt-7 whitespace-pre-line text-[15px] leading-7 text-slate-800 dark:text-slate-100">{email.body}</div>
-        <div className="mt-10 grid grid-cols-3 gap-2">
-          <Link to="/compose" className="flex h-11 items-center justify-center gap-2 rounded-full border border-slate-300 text-sm font-medium text-slate-700 dark:border-slate-700 dark:text-slate-100">
+        <div className="mt-7 whitespace-pre-line text-[15px] leading-7 text-[#202124] dark:text-[#e3e3e3]">{email.body}</div>
+        <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-3">
+          <Link to="/compose" className="flex h-11 items-center justify-center gap-2 rounded-full border border-[#dadce0] text-sm font-medium text-[#3c4043] transition hover:bg-[#f1f3f4] active:bg-[#e8f0fe] dark:border-[#5f6368] dark:text-[#e3e3e3] dark:hover:bg-white/[0.08]">
             <Reply size={18} />
             Reply
           </Link>
-          <Link to="/compose" className="flex h-11 items-center justify-center gap-2 rounded-full border border-slate-300 text-sm font-medium text-slate-700 dark:border-slate-700 dark:text-slate-100">
+          <Link to="/compose" className="flex h-11 items-center justify-center gap-2 rounded-full border border-[#dadce0] text-sm font-medium text-[#3c4043] transition hover:bg-[#f1f3f4] active:bg-[#e8f0fe] dark:border-[#5f6368] dark:text-[#e3e3e3] dark:hover:bg-white/[0.08]">
             <ReplyAll size={18} />
             Reply all
           </Link>
-          <Link to="/compose" className="flex h-11 items-center justify-center gap-2 rounded-full border border-slate-300 text-sm font-medium text-slate-700 dark:border-slate-700 dark:text-slate-100">
+          <Link to="/compose" className="flex h-11 items-center justify-center gap-2 rounded-full border border-[#dadce0] text-sm font-medium text-[#3c4043] transition hover:bg-[#f1f3f4] active:bg-[#e8f0fe] dark:border-[#5f6368] dark:text-[#e3e3e3] dark:hover:bg-white/[0.08]">
             <Forward size={18} />
             Forward
           </Link>

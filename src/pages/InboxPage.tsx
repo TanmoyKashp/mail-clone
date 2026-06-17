@@ -30,13 +30,13 @@ export function InboxPage({ mailbox, settingsView = false }: InboxPageProps) {
 
   if (settingsView) {
     return (
-      <main className="mx-auto min-h-svh max-w-2xl bg-white dark:bg-[#111315]">
+      <main className="gmail-scroll mx-auto min-h-svh max-w-2xl bg-[#f8fafd] dark:bg-[#0f1113]">
         <SearchBar onOpenDrawer={openDrawer} />
         <section className="px-5 py-8">
-          <h1 className="text-2xl font-semibold">Settings</h1>
-          <div className="mt-6 divide-y divide-slate-200 rounded-lg border border-slate-200 dark:divide-slate-800 dark:border-slate-800">
+          <h1 className="text-2xl font-normal text-[#202124] dark:text-[#e3e3e3]">Settings</h1>
+          <div className="mt-6 overflow-hidden rounded-[28px] bg-white shadow-[0_1px_2px_rgba(60,64,67,0.15)] dark:bg-[#17191c]">
             {['Default account', 'Notifications', 'Inbox density', 'Offline mail', 'Signature'].map((item) => (
-              <button key={item} type="button" className="flex h-14 w-full items-center px-4 text-left text-sm font-medium">
+              <button key={item} type="button" className="flex h-14 w-full items-center border-b border-[#e0e3e7] px-5 text-left text-sm font-medium last:border-b-0 dark:border-[#303134]">
                 {item}
               </button>
             ))}
@@ -47,15 +47,15 @@ export function InboxPage({ mailbox, settingsView = false }: InboxPageProps) {
   }
 
   return (
-    <main className="mx-auto min-h-svh max-w-2xl bg-white pb-24 dark:bg-[#111315]">
+    <main className="gmail-scroll mx-auto min-h-svh max-w-2xl bg-white pb-24 dark:bg-[#0f1113]">
       <SearchBar onOpenDrawer={openDrawer} />
-      <section className="px-4 pb-1 pt-3">
+      <section className="bg-white px-4 pb-1 pt-2 dark:bg-[#0f1113]">
         <div className="flex items-center justify-between">
-          <h1 className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">{mailboxTitles[mailbox]}</h1>
+          <h1 className="text-xs font-medium uppercase tracking-[0.08em] text-[#5f6368] dark:text-[#c4c7c5]">{mailboxTitles[mailbox]}</h1>
           <button
             type="button"
             onClick={refresh}
-            className="flex items-center gap-2 rounded-full px-3 py-2 text-xs font-medium text-slate-500 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-[#202124]"
+            className="flex items-center gap-2 rounded-full px-3 py-2 text-xs font-medium text-[#5f6368] transition hover:bg-[#f1f3f4] dark:text-[#c4c7c5] dark:hover:bg-white/[0.08]"
           >
             <RefreshCw size={15} className={refreshing ? 'animate-spin' : ''} />
             {refreshing ? 'Refreshing' : 'Pull to refresh'}
@@ -64,9 +64,9 @@ export function InboxPage({ mailbox, settingsView = false }: InboxPageProps) {
       </section>
       <section aria-label={`${mailboxTitles[mailbox]} emails`}>
         {loading ? (
-          <div className="space-y-4 px-4 py-6">
+          <div className="space-y-3 px-4 py-5">
             {Array.from({ length: 6 }).map((_, index) => (
-              <div key={index} className="h-16 animate-pulse rounded-xl bg-slate-100 dark:bg-[#202124]" />
+              <div key={index} className="h-[72px] animate-pulse rounded-2xl bg-[#eef3f8] dark:bg-[#1f2226]" />
             ))}
           </div>
         ) : (
